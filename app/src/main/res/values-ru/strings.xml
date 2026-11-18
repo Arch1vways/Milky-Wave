@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MilkyWave</string>
+    <string name="xposed_description">(OriginOS Only) Audio visualizer right on the lock screen</string>
+    <string name="preview">Предпросмотр</string>
+    <string name="appearance">Настройки</string>
+    <string name="show_visualizer">MilkyWave</string>
+    <string name="style">Стиль</string>
+    <string name="style_bars">Столбцы</string>
+    <string name="style_wave">Волна</string>
+    <string name="color">Цвет</string>
+    <string name="color_album">В цвет трека</string>
+    <string name="color_system">Система</string>
+    <string name="color_custom">Свой</string>
+    <string name="shape">Внешний вид</string>
+    <string name="height">Высота</string>
+    <string name="bars">Количество столбцов</string>
+    <string name="opacity">Прозрачность</string>
+    <string name="sensitivity">Чувствительность</string>
+    <string name="reset">Сбросить настройки</string>
+    <string name="reset_title">Сбросить настройки?</string>
+    <string name="reset_message">Все настройки вернутся к значениям по умолчанию</string>
+    <string name="reset_confirm">Сбросить</string>
+    <string name="cancel">Отмена</string>
+    <string name="status_ok">Модуль активен</string>
+    <string name="status_fail">Модуль не активен</string>
+    <string name="hex_description">HEX-код цвета</string>
+    <string name="value_percent">%1$d%%</string>
+    <string name="open_picker">Открыть выбор цвета</string>
+    <string name="picker_title">Выбор цвета</string>
+    <string name="brightness">Яркость</string>
+    <string name="rgb_red">Красный</string>
+    <string name="rgb_green">Зелёный</string>
+    <string name="rgb_blue">Синий</string>
+    <string name="done">Готово</string>
+    <string name="color_wheel">Цветовой круг</string>
+</resources>

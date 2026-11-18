@@ -1,0 +1,1 @@
+package android.content; import android.content.res.Resources; public class Context { public Resources getResources(){return new Resources();} public ContentResolver getContentResolver(){return new ContentResolver();} public int getColor(int id){return 0xff000000 | id;} }

@@ -1,0 +1,41 @@
+plugins { id 'com.android.application' }
+
+android {
+    buildFeatures { buildConfig true }
+    namespace 'dev.milkywave'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+    defaultConfig {
+        applicationId 'arch1.dev.milkywave'
+        minSdk 31
+        targetSdk 35
+        versionCode 12
+        versionName '1.1'
+    }
+    // Optional stable debug key, so new builds install over old ones. The key and its password live outside
+    // the project (path from env MILKYWAVE_SIGNING or the Gradle property milkywave.signing) and are never
+    // part of the sources. Without them the standard Android debug key is used.
+    def signingPath = System.getenv('MILKYWAVE_SIGNING') ?: project.findProperty('milkywave.signing')
+    def signingFile = signingPath ? file(signingPath) : null
+    if (signingFile != null && signingFile.isFile()) {
+        def sp = new Properties()
+        signingFile.withInputStream { sp.load(it) }
+        signingConfigs {
+            stableDebug {
+                storeFile file(sp['storeFile'])
+                storePassword sp['storePassword']
+                keyAlias sp['keyAlias']
+                keyPassword sp['keyPassword']
+            }
+        }
+        buildTypes { debug { signingConfig signingConfigs.stableDebug } }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    testOptions { unitTests { includeAndroidResources = true } }
+}
+dependencies {
+    compileOnly files('libs/libxposed-api-102.0.0.jar')
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
+    testImplementation files('libs/libxposed-api-102.0.0.jar')
+}
